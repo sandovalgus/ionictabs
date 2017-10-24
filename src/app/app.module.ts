@@ -16,6 +16,10 @@ import {ModalNuevoSitio} from '../pages/modal-nuevo-sitio/modal-nuevo-sitio';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
+import { Db } from '../providers/db';
+import { SQLite } from '@ionic-native/sqlite';
+
+// import { Http } from '@angular/http';
  
  
 @NgModule({
@@ -43,11 +47,14 @@ import { Camera } from '@ionic-native/camera';
     ModalNuevoSitio
   ],
   providers: [
+
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    Camera
+    Camera,
+    Db,
+    SQLite
   ]
 })
 export class AppModule {}
