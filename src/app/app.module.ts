@@ -13,11 +13,13 @@ import {Inicio} from '../pages/inicio/inicio';
 import {Listado} from '../pages/listado/listado';
 import {Info} from '../pages/info/info';
 import {ModalNuevoSitio} from '../pages/modal-nuevo-sitio/modal-nuevo-sitio';
+import {ModalDetalleSitio} from '../pages/modal-detalle-sitio/modal-detalle-sitio';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { Db } from '../providers/db';
 import { SQLite } from '@ionic-native/sqlite';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 // import { Http } from '@angular/http';
  
@@ -30,7 +32,8 @@ import { SQLite } from '@ionic-native/sqlite';
     Inicio,
     Listado,
     Info,
-    ModalNuevoSitio
+    ModalNuevoSitio,
+    ModalDetalleSitio
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { SQLite } from '@ionic-native/sqlite';
     Inicio,
     Listado,
     Info,
-    ModalNuevoSitio
+    ModalNuevoSitio,
+    ModalDetalleSitio
   ],
   providers: [
 
@@ -54,7 +58,8 @@ import { SQLite } from '@ionic-native/sqlite';
     Geolocation,
     Camera,
     Db,
-    SQLite
+    SQLite,
+    LaunchNavigator
   ]
 })
 export class AppModule {}

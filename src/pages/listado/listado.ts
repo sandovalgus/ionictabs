@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Db } from '../../providers/db';
+ import {ModalDetalleSitio} from '../modal-detalle-sitio/modal-detalle-sitio';
 
 /**
  * Generated class for the Listado page.
@@ -17,7 +18,12 @@ import { Db } from '../../providers/db';
 export class Listado {
 	sitios: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public db : Db) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public modalCtrl : ModalController,
+    public db : Db
+      ) {
   }
 
   ionViewDidLoad() {
@@ -39,6 +45,12 @@ export class Listado {
     }
 
     },(err)=>{ /* alert('error al sacar de la bd'+err) */ })
+   }
+
+
+   muestraSitio(sitio){
+      let modalSitio = this.modalCtrl.create( ModalDetalleSitio, sitio );
+      modalSitio.present();
    }
 
 
